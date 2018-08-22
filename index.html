@@ -95,6 +95,9 @@ map.on('load', function() {
   // the rest of the code will go in here
   var layers = ['1730-10000', '10000-50000', '50000-100000', '100000-150000', '150000+'];
 var colors = ['#FFEDA0', '#cfecd9', '#a0dab3', '#40b7c4', '#3195a0', '#253393'];
+///Add cursor    
+map.getCanvas().style.cursor = 'default';
+
 //my legend
 for (i = 0; i < layers.length; i++) {
   var layer = layers[i];
@@ -115,6 +118,7 @@ for (i = 0; i < layers.length; i++) {
 map.on('mousemove', function(e) {
   var provinces = map.queryRenderedFeatures(e.point, {
     layers: ['canada-pop']
+
   });
 
   if (provinces.length > 0) {
@@ -124,6 +128,7 @@ map.on('mousemove', function(e) {
   }
 });
 });
+    
 
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
