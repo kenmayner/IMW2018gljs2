@@ -23,6 +23,9 @@ var map = new mapboxgl.Map({
           45.504158802536615], // starting position [lng, lat]
     zoom: 12 // starting zoom
 });
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
 </script>
 
 </body>
